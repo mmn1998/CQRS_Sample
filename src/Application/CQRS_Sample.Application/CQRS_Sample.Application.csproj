@@ -9,7 +9,7 @@
   <ItemGroup>
     <Folder Include="Commands\Models\" />
     <Folder Include="Commands\Handlers\" />
-    <Folder Include="Events\" />
+    <Folder Include="Events\SomeModels\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Queries\Models\" />
     <Folder Include="Queries\Handlers\" />
@@ -18,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Infrastructure\CQRS_Sample.Persistence.Command\CQRS_Sample.Persistence.Command.csproj" />
     <ProjectReference Include="..\..\Infrastructure\CQRS_Sample.Persistence.Query\CQRS_Sample.Persistence.Query.csproj" />
+    <ProjectReference Include="..\..\Shared\CQRS_Sample.Common\CQRS_Sample.Common.csproj" />
   </ItemGroup>
 
 </Project>

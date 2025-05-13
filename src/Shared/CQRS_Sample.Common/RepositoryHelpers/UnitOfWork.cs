@@ -27,7 +27,7 @@ public class UnitOfWork : IUnitOfWork
     }
     public void Dispose()
     {
-        this._context.Dispose();
+        _context.Dispose();
     }
 
     private IList<IEvent> GetEvents(IList<EntityEntry> entityForSave)
@@ -49,7 +49,7 @@ public class UnitOfWork : IUnitOfWork
         {
             foreach (var item in events)
             {
-                await this._domainEventDispacher.Publish(item);
+                await _domainEventDispacher.Publish(item);
             }
         }
         await Task.CompletedTask;

@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.66" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\CQRS_Sample.Domain\CQRS_Sample.Domain.csproj" />
+    <ProjectReference Include="..\..\Shared\CQRS_Sample.Common\CQRS_Sample.Common.csproj" />
+  </ItemGroup>
+
 </Project>
