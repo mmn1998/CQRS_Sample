@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Commands\Models\" />
+    <Folder Include="Commands\Handlers\" />
+    <Folder Include="Events\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Queries\Models\" />
+    <Folder Include="Queries\Handlers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\CQRS_Sample.Persistence.Command\CQRS_Sample.Persistence.Command.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\CQRS_Sample.Persistence.Query\CQRS_Sample.Persistence.Query.csproj" />
+  </ItemGroup>
+
+</Project>
