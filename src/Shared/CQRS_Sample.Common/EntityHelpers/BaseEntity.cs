@@ -16,9 +16,10 @@ public class BaseEntity : IEventfulEntity
         _events?.Clear();
     }
 
-    public IReadOnlyCollection<IEvent>? GetEvents()
+    public IReadOnlyCollection<IEvent> GetEvents()
     {
-        return _events?.AsReadOnly();
+        _events = _events ?? new List<IEvent>();
+        return _events.AsReadOnly();
     }
 
     public void RemoveEvent(IEvent @event)

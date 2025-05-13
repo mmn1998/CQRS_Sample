@@ -10,5 +10,5 @@ public interface IEventfulEntity
 
     void ClearEvents();
 
-    IReadOnlyCollection<IEvent>? GetEvents();
+    IReadOnlyCollection<IEvent> GetEvents();
 }
