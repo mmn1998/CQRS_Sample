@@ -13,19 +13,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{DC84E1F5-C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{23014302-1816-47AF-95D8-3A798B950D8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS_Sample.Application", "src\Application\CQRS_Sample.Application\CQRS_Sample.Application.csproj", "{2A96A5C7-B20D-4C3D-9033-D63C00B1F61A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS_Sample.Application", "src\Application\CQRS_Sample.Application\CQRS_Sample.Application.csproj", "{2A96A5C7-B20D-4C3D-9033-D63C00B1F61A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS_Sample.Domain", "src\Core\CQRS_Sample.Domain\CQRS_Sample.Domain.csproj", "{F882ED08-7882-4860-9A3E-C1B67A108C2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS_Sample.Domain", "src\Core\CQRS_Sample.Domain\CQRS_Sample.Domain.csproj", "{F882ED08-7882-4860-9A3E-C1B67A108C2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS_Sample.Persistence.Command", "src\Infrastructure\CQRS_Sample.Persistence.Command\CQRS_Sample.Persistence.Command.csproj", "{0DC2352F-6A18-4829-977C-A8DAF18AE411}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS_Sample.Persistence.Command", "src\Infrastructure\CQRS_Sample.Persistence.Command\CQRS_Sample.Persistence.Command.csproj", "{0DC2352F-6A18-4829-977C-A8DAF18AE411}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS_Sample.Persistence.Query", "src\Infrastructure\CQRS_Sample.Persistence.Query\CQRS_Sample.Persistence.Query.csproj", "{DACC626E-EB38-4A09-843A-BF06E5F765FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS_Sample.Persistence.Query", "src\Infrastructure\CQRS_Sample.Persistence.Query\CQRS_Sample.Persistence.Query.csproj", "{DACC626E-EB38-4A09-843A-BF06E5F765FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS_Sample.API", "src\Presentation\CQRS_Sample.API\CQRS_Sample.API.csproj", "{6F38B738-D04A-4E02-BD1A-AF0D04F04DF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS_Sample.API", "src\Presentation\CQRS_Sample.API\CQRS_Sample.API.csproj", "{6F38B738-D04A-4E02-BD1A-AF0D04F04DF4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{DD521C59-CFA9-4E86-B73E-10B5BEEA4BDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS_Sample.Common", "src\Shared\CQRS_Sample.Common\CQRS_Sample.Common.csproj", "{EE132C1D-2802-48C5-8241-00C9E18FE16A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS_Sample.Common", "src\Shared\CQRS_Sample.Common\CQRS_Sample.Common.csproj", "{EE132C1D-2802-48C5-8241-00C9E18FE16A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS_Sample.Application.Contracts", "src\Application\CQRS_Sample.Application.Contracts\CQRS_Sample.Application.Contracts.csproj", "{7109686D-0147-4098-82C0-97F1FAA8991D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{EE132C1D-2802-48C5-8241-00C9E18FE16A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE132C1D-2802-48C5-8241-00C9E18FE16A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE132C1D-2802-48C5-8241-00C9E18FE16A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7109686D-0147-4098-82C0-97F1FAA8991D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7109686D-0147-4098-82C0-97F1FAA8991D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7109686D-0147-4098-82C0-97F1FAA8991D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7109686D-0147-4098-82C0-97F1FAA8991D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +79,7 @@ Global
 		{6F38B738-D04A-4E02-BD1A-AF0D04F04DF4} = {23014302-1816-47AF-95D8-3A798B950D8D}
 		{DD521C59-CFA9-4E86-B73E-10B5BEEA4BDC} = {54F087B0-9C9B-4E78-A259-AE2C8615F991}
 		{EE132C1D-2802-48C5-8241-00C9E18FE16A} = {DD521C59-CFA9-4E86-B73E-10B5BEEA4BDC}
+		{7109686D-0147-4098-82C0-97F1FAA8991D} = {7CEECE61-AACB-4535-9D32-D3E7CE81D910}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {14DE5936-5436-499D-8E48-F637C9D39675}

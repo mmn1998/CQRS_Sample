@@ -7,18 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\Models\" />
-    <Folder Include="Commands\Handlers\" />
-    <Folder Include="Events\SomeModels\" />
     <Folder Include="Interfaces\" />
-    <Folder Include="Queries\Models\" />
-    <Folder Include="Queries\Handlers\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Queries\Handlers\SomeModels\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Infrastructure\CQRS_Sample.Persistence.Command\CQRS_Sample.Persistence.Command.csproj" />
     <ProjectReference Include="..\..\Infrastructure\CQRS_Sample.Persistence.Query\CQRS_Sample.Persistence.Query.csproj" />
     <ProjectReference Include="..\..\Shared\CQRS_Sample.Common\CQRS_Sample.Common.csproj" />
+    <ProjectReference Include="..\CQRS_Sample.Application.Contracts\CQRS_Sample.Application.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

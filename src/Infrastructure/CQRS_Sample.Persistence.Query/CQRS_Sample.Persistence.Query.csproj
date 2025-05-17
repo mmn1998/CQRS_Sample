@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Application\CQRS_Sample.Application.Contracts\CQRS_Sample.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\Core\CQRS_Sample.Domain\CQRS_Sample.Domain.csproj" />
     <ProjectReference Include="..\..\Shared\CQRS_Sample.Common\CQRS_Sample.Common.csproj" />
   </ItemGroup>

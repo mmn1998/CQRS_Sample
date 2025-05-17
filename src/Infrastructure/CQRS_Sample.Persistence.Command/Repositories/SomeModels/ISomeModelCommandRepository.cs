@@ -5,4 +5,5 @@ namespace CQRS_Sample.Persistence.Command.Repositories.SomeModels;
 
 public interface ISomeModelCommandRepository : IRepository<SomeModel>
 {
+    Task<SomeModel> GetById(long id);
 }
