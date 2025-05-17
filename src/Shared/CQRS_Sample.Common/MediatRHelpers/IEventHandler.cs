@@ -2,6 +2,6 @@
 
 namespace CQRS_Sample.Common.MediatRHelpers;
 
-public interface IEventHandler : INotificationHandler<IEvent>
+public interface IEventHandler<in TNotification> : INotificationHandler<IEvent> where TNotification : IEvent
 {
 }
