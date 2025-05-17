@@ -22,7 +22,7 @@ public class SomeModelQueryRepository : ISomeModelQueryRepository
         throw new NotImplementedException();
     }
 
-    public Task SyncData(SomeModel entity)
+    public Task SyncData(SomeModel entity, bool isAdded = false, bool isEdited = false, bool isDeleted = false)
     {
         throw new NotImplementedException();
     }
