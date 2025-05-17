@@ -4,7 +4,6 @@ using CQRS_Sample.Common.MediatRHelpers;
 using CQRS_Sample.Domain.Models.SomeModels;
 using CQRS_Sample.Persistence.Command.Repositories.SomeModels;
 using Sima.Framework.Core.Repository;
-using System.ComponentModel.DataAnnotations;
 
 namespace CQRS_Sample.Application.Commands.Handlers.SomeModels;
 
@@ -49,5 +48,6 @@ public class SomeModelCommandHandler : ICommandHandler<CreateSomeModelCommand, l
         _repository.Remove(entity);
         var @event = new DeleteSomeModelEvent(entity.Id);
         await _unitOfWork.SaveChangesAsync();
+        return entity.Id;
     }
 }

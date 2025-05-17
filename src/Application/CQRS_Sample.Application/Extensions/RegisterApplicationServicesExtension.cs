@@ -4,6 +4,7 @@ using CQRS_Sample.Common.MediatRHelpers;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace CQRS_Sample.Application.Extensions;
 
@@ -11,6 +12,11 @@ public static class RegisterApplicationServicesExtension
 {
     public static IServiceCollection RegisterApplicationServices(this IServiceCollection services, IConfiguration configuration)
     {
+        services.AddMediatR(c =>
+        {
+            c.Lifetime = ServiceLifetime.Scoped;
+            c.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly());
+        });
         services.Scan(scan =>
             scan.FromAssemblyOf<SomeModelEventHandler>()
                 .AddClasses(classes => classes.AssignableTo(typeof(INotificationHandler<>)))

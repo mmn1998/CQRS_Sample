@@ -6,6 +6,7 @@ namespace CQRS_Sample.Domain.Models.SomeModels;
 
 public class SomeModel : BaseEntity
 {
+    private SomeModel() { }
     public SomeModel(CreateSomeModelArg arg)
     {
         Id = arg.Id;

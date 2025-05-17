@@ -1,3 +1,7 @@
+using CQRS_Sample.Persistence.Command.Extensions;
+using CQRS_Sample.Persistence.Query.Extensions;
+using CQRS_Sample.Application.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,7 +11,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 IConfiguration configuration = builder.Configuration;
+builder.Services
+    .RegisterInfrastrucureCommandServices(configuration)
+    .RegisterInfrastrucureQueryServices(configuration)
+    .RegisterApplicationServices(configuration);
+
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

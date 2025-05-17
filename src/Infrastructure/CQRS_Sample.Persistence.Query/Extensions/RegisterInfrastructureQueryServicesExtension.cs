@@ -2,11 +2,11 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CQRS_Sample.Persistence.Command.Extensions;
+namespace CQRS_Sample.Persistence.Query.Extensions;
 
 public static class RegisterInfrastructureQueryServicesExtension
 {
-    public static IServiceCollection RegisterInfrastrucureCommandServices(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection RegisterInfrastrucureQueryServices(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddScoped<ISomeModelQueryRepository, SomeModelQueryRepository>();
         return services;
