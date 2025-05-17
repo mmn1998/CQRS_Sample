@@ -47,6 +47,7 @@ public class SomeModelCommandHandler : ICommandHandler<CreateSomeModelCommand, l
         var entity = await _repository.GetById(request.Id);
         _repository.Remove(entity);
         var @event = new DeleteSomeModelEvent(entity.Id);
+        entity.AddEvent(@event);
         await _unitOfWork.SaveChangesAsync();
         return entity.Id;
     }

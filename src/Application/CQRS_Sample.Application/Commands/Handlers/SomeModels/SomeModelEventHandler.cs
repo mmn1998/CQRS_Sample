@@ -19,23 +19,19 @@ public class SomeModelEventHandler : INotificationHandler<CreateSomeModelEvent>,
     public Task Handle(CreateSomeModelEvent notification, CancellationToken cancellationToken)
     {
         var arg = new CreateSomeModelArg { Id = notification.id, Name = notification.name };
-        var entity = SomeModel.Create(arg);
-        _queryRepository.SyncData(entity, isAdded: true);
+        _queryRepository.SyncData_Add(arg);
         return Task.CompletedTask;
     }
     public Task Handle(ModifySomeModelEvent notification, CancellationToken cancellationToken)
     {
-        var arg = new CreateSomeModelArg { Id = notification.id, Name = notification.name };
-        var entity = SomeModel.Create(arg);
-        _queryRepository.SyncData(entity, isEdited: true);
+        var arg = new ModifySomeModelArg { Id = notification.id, Name = notification.name };
+        _queryRepository.SyncData_Edit(arg);
         return Task.CompletedTask;
     }
 
     public Task Handle(DeleteSomeModelEvent notification, CancellationToken cancellationToken)
     {
-        var arg = new CreateSomeModelArg { Id = notification.id };
-        var entity = SomeModel.Create(arg);
-        _queryRepository.SyncData(entity, isDeleted: true);
+        _queryRepository.SyncData_Delete(notification.id);
         return Task.CompletedTask;
     }
 }

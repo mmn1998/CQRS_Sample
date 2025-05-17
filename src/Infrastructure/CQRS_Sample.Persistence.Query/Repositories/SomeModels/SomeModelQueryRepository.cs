@@ -36,36 +36,38 @@ SELECT [Id]
         return await connection.QueryFirstOrDefaultAsync<GetSomeModelQueryResult>(query, new { Id = request.Id }) ?? throw new KeyNotFoundException();
     }
 
-    public Task SyncData(SomeModel entity, bool isAdded = false, bool isEdited = false, bool isDeleted = false)
+    public async Task SyncData_Add(CreateSomeModelArg entity)
     {
         using var connection = new SqlConnection(_connectionString);
-        connection.OpenAsync();
-        var query = string.Empty;
-        if (isAdded)
-        {
-            query = @"
+        await connection.OpenAsync();
+        var query = @"
 Insert Into SomeModels (Id, Name)
 Values (@Id, @Name)
 ";
-            connection.ExecuteAsync(query, new {Id = entity.Id, Name = entity.Name});
-        }
-        if (isEdited)
-        {
-            query = @"
+        await connection.ExecuteAsync(query, new { Id = entity.Id, Name = entity.Name });
+    }
+
+    public async Task SyncData_Delete(long id)
+    {
+        using var connection = new SqlConnection(_connectionString);
+        await connection.OpenAsync();
+        var query = @"
+Delete from SomeModels
+Where Id=@Id
+"
+        ;
+        await connection.ExecuteAsync(query, new { Id = id });
+    }
+
+    public async Task SyncData_Edit(ModifySomeModelArg entity)
+    {
+        using var connection = new SqlConnection(_connectionString);
+        await connection.OpenAsync();
+        var query = @"
 Update SomeModels (Id, Name)
 Set Name=@Name
 Where Id = @Id
 ";
-            connection.ExecuteAsync(query, new {Id = entity.Id, Name = entity.Name});
-        }
-        if (isDeleted)
-        {
-            query = @"
-Delete from SomeModels
-Where Id=@Id
-";
-            connection.ExecuteAsync(query, new { Id = entity.Id, Name = entity.Name });
-        }
-        return Task.CompletedTask;
+        await connection.ExecuteAsync(query, new { Id = entity.Id, Name = entity.Name });
     }
 }
