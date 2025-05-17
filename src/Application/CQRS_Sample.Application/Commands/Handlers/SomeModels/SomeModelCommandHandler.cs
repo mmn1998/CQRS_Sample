@@ -21,7 +21,7 @@ public class SomeModelCommandHandler : ICommandHandler<CreateSomeModelCommand, l
     }
     public async Task<long> Handle(CreateSomeModelCommand request, CancellationToken cancellationToken)
     {
-        var id = 1;
+        var id = request.Id;
         var arg = new CreateSomeModelArg { Id = id, Name = request.Name };
         var entity = SomeModel.Create(arg);
         var @event = new CreateSomeModelEvent(id, request.Name);

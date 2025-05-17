@@ -52,7 +52,6 @@ public class UnitOfWork : IUnitOfWork
                 await _domainEventDispacher.Publish(item);
             }
         }
-        await Task.CompletedTask;
     }
 
 
