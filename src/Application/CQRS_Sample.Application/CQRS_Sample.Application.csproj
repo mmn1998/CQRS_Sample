@@ -8,8 +8,10 @@
 
   <ItemGroup>
     <Folder Include="Interfaces\" />
-    <Folder Include="Extensions\" />
-    <Folder Include="Queries\Handlers\SomeModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Scrutor" Version="6.0.1" />
   </ItemGroup>
 
   <ItemGroup>
