@@ -1,4 +1,6 @@
-﻿using CQRS_Sample.Common.EntityHelpers;
+﻿using CQRS_Sample.Application.Events.SomeModels;
+using CQRS_Sample.Common.EntityHelpers;
+using MediatR;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -11,6 +13,8 @@ public class SomeModel : BaseEntity
     {
         Id = arg.Id;
         Name = arg.Name;
+        var @event = new CreateSomeModelEvent(arg.Id, arg.Name);
+        AddEvent(@event);
     }
     [DatabaseGenerated(DatabaseGeneratedOption.None)]
     [Key]
@@ -18,6 +22,7 @@ public class SomeModel : BaseEntity
     public string? Name { get; private set; }
     public static SomeModel Create(CreateSomeModelArg arg)
     {
+        
         return new SomeModel(arg);
     }
     public void Modify(SomeModel arg)

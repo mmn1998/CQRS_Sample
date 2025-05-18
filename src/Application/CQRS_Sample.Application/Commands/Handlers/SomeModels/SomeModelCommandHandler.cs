@@ -23,9 +23,7 @@ public class SomeModelCommandHandler : ICommandHandler<CreateSomeModelCommand, l
     {
         var id = request.Id;
         var arg = new CreateSomeModelArg { Id = id, Name = request.Name };
-        var entity = SomeModel.Create(arg);
-        var @event = new CreateSomeModelEvent(id, request.Name);
-        entity.AddEvent(@event);
+        var entity = SomeModel.Create(arg);        
         await _repository.Add(entity);
         await _unitOfWork.SaveChangesAsync();
         return id;

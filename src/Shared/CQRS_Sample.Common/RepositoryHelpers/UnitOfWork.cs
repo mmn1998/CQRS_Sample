@@ -30,9 +30,9 @@ public class UnitOfWork : IUnitOfWork
         _context.Dispose();
     }
 
-    private IList<IEvent> GetEvents(IList<EntityEntry> entityForSave)
+    private IList<INotification> GetEvents(IList<EntityEntry> entityForSave)
     {
-        List<IEvent> events = new List<IEvent>();
+        List<INotification> events = new List<INotification>();
         foreach (EntityEntry entityEntry in (IEnumerable<EntityEntry>)entityForSave)
         {
             if (entityEntry.Entity is IEventfulEntity entity && entity.GetEvents() != null)
@@ -43,7 +43,7 @@ public class UnitOfWork : IUnitOfWork
         }
         return events;
     }
-    private async Task RaiseEvent(IList<IEvent> events)
+    private async Task RaiseEvent(IList<INotification> events)
     {
         if (events != null)
         {

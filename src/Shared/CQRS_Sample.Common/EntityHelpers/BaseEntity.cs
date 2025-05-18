@@ -1,28 +1,27 @@
-﻿using CQRS_Sample.Common.MediatRHelpers;
+﻿using MediatR;
 
 namespace CQRS_Sample.Common.EntityHelpers;
 
 public class BaseEntity : IEventfulEntity
 {
-    private List<IEvent>? _events;
-    public void AddEvent(IEvent @event)
+    private List<INotification>? _events;
+    public void AddEvent(INotification @event)
     {
-        _events = _events ?? new List<IEvent>();
+        _events = _events ?? new List<INotification>();
         _events.Add(@event);
     }
 
     public void ClearEvents()
     {
-        _events?.Clear();
+        _events.Clear();
     }
 
-    public IReadOnlyCollection<IEvent> GetEvents()
+    public IReadOnlyCollection<INotification> GetEvents()
     {
-        _events = _events ?? new List<IEvent>();
-        return _events.AsReadOnly();
+        return _events?.AsReadOnly();
     }
 
-    public void RemoveEvent(IEvent @event)
+    public void RemoveEvent(INotification @event)
     {
         _events?.Remove(@event);
     }
